@@ -12,9 +12,6 @@ Please note that query parameters need to be URL-encoded. Below is an example of
 > [!NOTE]
 > Please note that query parameters need to be URL-encoded. Below is an example of a properly formatted query:
 
-I want to highlight a part of a code block that is written in markdown using triple backticks (```). Here is an image of what I want. code block with highlighting-imgur
-
-I want to replicate how we highlight a sentence in a book with a highlighter/marker . I have used the <pre></pre> and <mark></mark> but these tags dont work inside code block as seen below;
 
 ```
 
