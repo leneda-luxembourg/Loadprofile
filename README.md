@@ -67,3 +67,43 @@ curl -X 'GET' \
 
 ```
 
+Executable code could look like the following
+
+
+```
+import pandas as pd
+import requests
+
+# Define the URL, headers, and query parameters
+url = 'https://api.test.nedp.eu/api/metering-points/LU3712/time-series'
+headers = {
+    'accept': '*/*',
+    'x-energy-id': 'LUXE-PH-KE-12345'
+}
+params = {
+    'startDateTime': '2024-01-10',
+    'endDateTime': '2024-01-12',
+    'obisCode': '1-1:2.29.0'
+}
+
+# Make the GET request to the API
+response = requests.get(url, headers=headers, params=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON response
+    response_data = response.json()
+    
+    # Convert the 'items' part of the response data to a pandas DataFrame
+    df = pd.DataFrame(response_data['items'])
+    
+    # Display the DataFrame
+    print(df)
+else:
+    # Print an error message if the request fails
+    print(f"Error: {response.status_code} - {response.text}")
+
+
+```
+
+
